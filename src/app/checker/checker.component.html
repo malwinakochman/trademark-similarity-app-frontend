@@ -1,0 +1,74 @@
+<div class="container">
+    <div class="row mt-5">
+        <div class="col-md-6">
+            <h2>Ensure your trademark</h2>
+            <div class="row">
+                <div class="col-md-5 justify-content-left align-items-center">
+                    <button class="btn btn-primary" (click)="fileInput.click()">SELECT TRADEMARK</button>
+                </div>
+                <div class="col-md-4 d-flex justify-content-left align-items-center">
+                    <span id="fileName" class="ml-2" style="margin-left: 20px; margin-top: 20px;">{{ fileName }}</span>
+                    <input type="file" #fileInput accept="image/*" style="display: none;" (change)="loadTrademarkImage($event)">
+                </div>
+            <div class="row">
+                <button class="btn btn-primary btn-small check-similarity custom-small-btn" style="margin-top: 20px;" (click)="checkSimilarity()">CHECK SIMILARITY</button>
+            </div>   
+            </div>
+        </div>
+        <div class="col-md-6 text-right">
+            <h2>Your Trademark</h2>
+            <img *ngIf="imageSrc" [src]="imageSrc" class="img-fluid" style="width: 40%;">
+        </div>
+    </div>
+    <div *ngIf="!fileName" style="margin-top: 130px;">
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <h2>Similar Trademarks</h2>
+            <div id="similar-trademarks" class="d-flex flex-wrap">
+                <ng-container *ngIf="!isLoading && !similarityResult && noMatchesFound">
+                    <p style="font-size: 22px; color: black; margin-top: 10px; font-weight: 300;">Verification was successful.<br>No results found.</p>
+                    <img id="trademark-image" src="validCheck.png" alt="valid check" class="img-fluid" style="width: 9%; margin-left: 14px;">
+                </ng-container>
+                <ng-container *ngIf="similarityResult">
+                    <div *ngFor="let result of similarityResult">
+                        <img [src]="result.imageUrl" alt="Similar trademark" class="img-fluid mt-3" style="width: 225px; margin-right: 10px;">
+                    </div>
+                </ng-container>
+            </div>
+        </div>
+    </div>
+
+    <!-- <div class="row">
+        <div class="col-12">
+            <h2>Similar Trademarks</h2>
+            <div id="similar-trademarks" class="d-flex flex-wrap">
+                <p style="font-size: 22px; color: black; margin-top: 10px; font-weight: 300;">Verification was successful.<br>No results found.</p>
+                <img id="trademark-image" src="validCheck.png" alt="valid check" class="img-fluid" style="width: 9%; margin-left: 14px;">
+
+                <img id="trademark-image" src="classic1.jpeg" alt="Your trademark" class="img-fluid mt-3" style="width: 19%; margin-right: 10px;">
+                <img id="trademark-image" src="classic2.jpeg" alt="Your trademark" class="img-fluid mt-3" style="width: 19%; margin-right: 10px;">
+                <img id="trademark-image" src="classic3.jpeg" alt="Your trademark" class="img-fluid mt-3" style="width: 19%; margin-right: 10px;">
+                <img id="trademark-image" src="classic4.jpeg" alt="Your trademark" class="img-fluid mt-3" style="width: 19%; margin-right: 10px;">
+                <img id="trademark-image" src="classic5.jpeg" alt="Your trademark" class="img-fluid mt-3" style="width: 19%; margin-right: 10px;">
+                <img id="trademark-image" src="classic6.jpeg" alt="Your trademark" class="img-fluid mt-3" style="width: 19%; margin-right: 10px;">
+                <img id="trademark-image" src="classic7.png" alt="Your trademark" class="img-fluid mt-3" style="width: 19%; margin-right: 10px;">
+                <img id="trademark-image" src="classic8.jpeg" alt="Your trademark" class="img-fluid mt-3" style="width: 19%; margin-right: 10px;">
+
+            </div>
+        </div>
+    </div> -->
+</div>
+<div class="modal" tabindex="-1" [ngStyle]="{'display': isLoading ? 'block' : 'none'}">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content bg-translucent">
+            <div class="modal-body text-center">
+                <p class="loading-text">Please wait, checking similarity...</p>
+                <div class="spinner-border text-primary" role="status" style="width: 3rem; height: 3rem;">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal-backdrop fade show" *ngIf="isLoading"></div>

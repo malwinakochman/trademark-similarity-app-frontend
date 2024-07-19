@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="row justify-content-center mt-5">
+    <div class="col-md-6 text-center">
+      <h2 class="mb-4">Sign In</h2>
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <div *ngIf="errorMessage" class="alert alert-danger alert-dismissible fade show" role="alert">
+          {{ errorMessage }}
+          <button type="button" class="btn-close" (click)="clearMessages()" aria-label="Close"></button>
+        </div>
+        <div *ngIf="successMessage" class="alert alert-success alert-dismissible fade show" role="alert">
+          {{ successMessage }}
+          <button type="button" class="btn-close" (click)="clearMessages()" aria-label="Close"></button>
+        </div>
+        <div class="form-group position-relative">
+          <input type="text" class="form-control" placeholder="Email" formControlName="email">
+          <img src="email.png" alt="Email" class="position-absolute" style="top: 50%; left: 10px; transform: translateY(-50%); width: 30px;">
+          <i *ngIf="isFieldValid('username')" class="bi bi-check text-success position-absolute" style="top: 50%; right: 10px; transform: translateY(-50%); font-size: 24px;"></i>
+        </div>
+        <div class="form-group position-relative">
+          <input type="password" class="form-control" placeholder="Password" formControlName="password">
+          <img src="password.png" alt="Password" class="position-absolute" style="top: 50%; left: 10px; transform: translateY(-50%); width: 30px;">
+          <i *ngIf="isFieldValid('password')" class="bi bi-check text-success position-absolute" style="top: 50%; right: 10px; transform: translateY(-50%); font-size: 24px;"></i>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block" [disabled]="loginForm.invalid">Get Started</button>
+      </form>
+      <div class="d-flex justify-content-between mt-3">
+        <p>Create Account <a href="/register">here</a></p>
+        <a href="/rules">Need Help?</a>
+      </div>
+    </div>
+  </div>
+</div>

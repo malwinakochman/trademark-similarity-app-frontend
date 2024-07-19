@@ -1,0 +1,57 @@
+<body>
+  <div class="container">
+    <div class="row justify-content-between align-items-start mt-5">
+      <div class="col-md-4">
+        <h2 class="text-primary">Profile</h2>
+        <div class="profile">
+          <div class="profile-item">
+            <img src="email.png" alt="Email" class="position-absolute" style="top: 270px; left: 105px; transform: translateY(-50%); width: 30px;">
+            <input *ngIf="!isEditing" [(ngModel)]="tempEmail" type="email" class="form-control" placeholder="{{email}}" disabled>
+            <input *ngIf="isEditing" [(ngModel)]="tempEmail" type="email" class="form-control" disabled>
+          </div>
+          <div class="profile-item">
+            <img src="username.png" alt="Username" class="position-absolute" style="top: 326px; left: 105px; transform: translateY(-50%); width: 30px;">
+            <input *ngIf="!isEditing" [(ngModel)]="tempUsername" type="username" class="form-control" placeholder="{{username}}" disabled>
+            <input *ngIf="isEditing" [(ngModel)]="tempUsername" type="username" class="form-control">
+          </div>
+          <div class="profile-item">
+            <img src="password.png" alt="Password" class="position-absolute" style="top: 380px; left: 105px; transform: translateY(-50%); width: 30px;">
+            <input *ngIf="!isEditing" [(ngModel)]="tempPassword" type="password" class="form-control" placeholder="••••••••" disabled>
+            <input *ngIf="isEditing" placeholder="••••••••" [(ngModel)]="tempPassword" type="password" class="form-control">
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <button *ngIf="!isEditing" class="btn btn-primary" (click)="editProfile()">EDIT PROFILE</button>
+              <button *ngIf="isEditing" class="btn btn-primary" (click)="submitChanges()">SUBMIT</button>
+            </div>
+            <div class="col-md-6">
+              <button *ngIf="isEditing" class="btn btn-secondary" (click)="cancelEdit()">CANCEL</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-7">
+        <h2 class="text-primary">History</h2>
+        <div class="history" style="max-height: 500px; overflow-y: auto;">
+          <div class="history-item" *ngFor="let item of searchHistory">
+            <div class="history-details">
+              <p><strong>Name:</strong> {{ item.fileName }}</p>
+              <div class="text-truncate" style="max-width:212px;">
+              <p><strong>Date of search:</strong> {{ item.createdAt }}</p>
+              </div>
+              <p><strong>Similar images:</strong></p>
+              <div class="similar-images">
+                <div *ngFor="let photo of item.similarTrademarksPhotos">
+                  <img [src]="'data:image/jpeg;base64,' + photo.image" alt="Similar trademark" class="img-fluid mt-1" style="margin-right: 10px;">
+                </div>
+              </div>
+            </div>
+            <div class="history-image">
+              <img [src]="'data:image/png;base64,' + item.comparedImage" alt="Photo of your trademark">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>

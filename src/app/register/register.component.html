@@ -1,0 +1,60 @@
+<head>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+</head>
+<div class="container">
+  <div class="row justify-content-center mt-5">
+    <div class="col-md-6 text-center">
+      <h2 class="mb-4">Sign Up</h2>
+      <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+        <div *ngIf="errorMessage" class="alert alert-danger alert-dismissible fade show" role="alert">
+          {{ errorMessage }}
+          <button type="button" class="btn-close" (click)="clearMessages()" aria-label="Close"></button>
+        </div>
+        <div *ngIf="successMessage" class="alert alert-success alert-dismissible fade show" role="alert">
+          {{ successMessage }}
+          <button type="button" class="btn-close" (click)="clearMessages()" aria-label="Close"></button>
+        </div>
+        <div class="form-group-first position-relative">
+          <input type="text" class="form-control" placeholder="Username" formControlName="username">
+          <img src="username.png" alt="Username" class="position-absolute" style="top: 50%; left: 10px; transform: translateY(-50%); width: 30px;">
+          <i *ngIf="registerForm.get('username')?.valid" class="bi bi-check text-success position-absolute" style="top: 50%; left: 585px; transform: translateY(-50%); font-size: 36px;"></i>
+        </div>
+        <div *ngIf="registerForm.get('username')?.invalid && (registerForm.get('username')?.dirty || registerForm.get('username')?.touched)" class="text-danger">
+          Username is required
+        </div>
+        <div class="form-group position-relative">
+          <input type="email" class="form-control" placeholder="Email" formControlName="email">
+          <img src="email.png" alt="Email" class="position-absolute" style="top: 50%; left: 10px; transform: translateY(-50%); width: 30px;">
+          <i *ngIf="registerForm.get('email')?.valid" class="bi bi-check text-success position-absolute" style="top: 50%; left: 585px; transform: translateY(-50%); font-size: 36px;"></i>
+        </div>      
+        <div *ngIf="registerForm.get('email')?.invalid && (registerForm.get('email')?.dirty || registerForm.get('email')?.touched)" class="text-danger">
+          Please enter a valid email address
+        </div>  
+
+        <div class="form-group position-relative">
+          <input type="password" class="form-control" placeholder="Password" formControlName="password">
+          <img src="password.png" alt="Password" class="position-absolute" style="top: 50%; left: 10px; transform: translateY(-50%); width: 30px;">
+          <i *ngIf="registerForm.get('password')?.valid" class="bi bi-check text-success position-absolute" style="top: 50%; left: 585px; transform: translateY(-50%); font-size: 36px;"></i>
+        </div>
+        <div *ngIf="registerForm.get('password')?.invalid && (registerForm.get('password')?.dirty || registerForm.get('password')?.touched)" class="text-danger">
+          Password is required and must be at least 6 characters long
+        </div>
+
+        <div class="form-group position-relative">
+          <input type="password" class="form-control" placeholder="Retype Password" formControlName="retypePassword">
+          <img src="password.png" alt="Password" class="position-absolute" style="top: 50%; left: 10px; transform: translateY(-50%); width: 30px;">
+          <i *ngIf="registerForm.get('retypePassword')?.valid" class="bi bi-check-all text-success position-absolute" style="top: 50%; left: 585px; transform: translateY(-50%); font-size: 36px;"></i>
+        </div>
+        <div *ngIf="registerForm.hasError('passwordMismatch') && registerForm.get('retypePassword')?.touched" class="text-danger">
+          Passwords do not match
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-block" [disabled]="registerForm.invalid">Get Started</button>
+      </form>
+      <div class="d-flex justify-content-between mt-3">
+        <p>Do you have an account? <a href="/login">Login here</a></p>
+        <a href="/help">Need Help?</a>
+      </div>
+    </div>
+  </div>
+</div>

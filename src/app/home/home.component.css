@@ -1,0 +1,136 @@
+.row {
+  margin: 0;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+}
+
+.display-4 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #333;
+}
+
+.lead {
+  font-size: 1.25rem;
+  font-weight: 300;
+  color: #666;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+  border-color: #004085;
+}
+
+.mt-3 {
+  margin-top: 1rem;
+}
+
+.mt-5 {
+  margin-top: 3rem;
+}
+
+.my-4 {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+img {
+  border-radius: 8px;
+}
+
+h1 {
+  color: #2c3e50;
+  font-weight: bold;
+}
+
+p {
+  color: #7f8c8d;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 1.2rem;
+}
+
+.nav-link {
+  color: #333;
+  margin-right: 40px;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.nav-link:hover {
+  color: #007bff;
+}
+
+.btn-outline-primary {
+  border-color: #007bff;
+  color: #007bff;
+}
+
+.btn-outline-primary:hover {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.position-relative {
+  position: relative;
+}
+
+.main-image {
+  width: 100%;
+  max-width: 400px;
+}
+
+.floating-icon {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+}
+
+.lightbulb {
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.coin {
+  top: 50%;
+  left: -20px;
+  transform: translateY(-50%);
+}
+
+.checkmark {
+  bottom: -20px;
+  right: 50%;
+  transform: translateX(50%);
+}
+
+.d-flex {
+  display: flex;
+}
+
+.justify-content-end {
+  justify-content: flex-end;
+}
+
+.align-items-center {
+  align-items: center;
+}

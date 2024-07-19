@@ -1,0 +1,16 @@
+<div class="row justify-content-between align-items-center">
+    <div class="col-6">
+        <a href="/" style="display: inline-block; width: 50%; margin-top: 15px; margin-left: 20px;">
+            <img src="logo.png" alt="Logo" class="img-fluid" style="width: 100%; height: auto;">
+        </a>          
+    </div>
+    <div class="col-6 text-right d-flex justify-content-end align-items-center">
+        <a href="/checker" class="nav-link">CHECKER</a>
+        <a href="#" class="nav-link">RULES</a>
+        <a *ngIf="isLoggedIn" href="/profile" style="width: 10%; margin-right: 18px;">
+            <img src="profile.png" alt="Profile" class="img-fluid" style="width: 100%; height: auto;">
+        </a>
+        <a *ngIf="!isLoggedIn" href="/login" class="btn btn-outline-primary" style="font-size: 18px; margin-right: 40px;">SIGN IN</a>
+        <a *ngIf="isLoggedIn" (click)="logout()" class="btn btn-outline-primary" style="font-size: 18px; margin-right: 40px;">SIGN OUT</a>
+    </div>
+</div>
