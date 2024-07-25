@@ -23,7 +23,7 @@ The Trademark Similarity Application allows users to compare trademarks and asse
 <img width="1440" alt="uploadTrademark" src="https://github.com/user-attachments/assets/249ca6eb-d7dc-4d68-9f64-2b568a6c6462">
 <img width="1440" alt="CheckHomeRepair" src="https://github.com/user-attachments/assets/eb19e4d5-c660-4fce-86ec-0ef44c6300d2">
 <img width="1440" alt="checkClassicResult" src="https://github.com/user-attachments/assets/f60828f8-a82f-4bbf-9861-695bfd08949d">
-<img width="454" alt="image" src="https://github.com/user-attachments/assets/7dd44e94-8e59-4319-83c2-208ea0050abf">
+<img width="1440" alt="image" src="https://github.com/user-attachments/assets/7dd44e94-8e59-4319-83c2-208ea0050abf">
 
 ## Technical Stack
 
