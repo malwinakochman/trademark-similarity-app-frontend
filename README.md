@@ -18,6 +18,13 @@ The Trademark Similarity Application allows users to compare trademarks and asse
 - Backend processing for accurate similarity calculations
 - Integration between frontend and backend for seamless user experience
 
+<img width="1440" alt="home" src="https://github.com/user-attachments/assets/a835227d-76e3-4a10-ac4f-8b4fa3091622">
+![signUpAllData](https://github.com/user-attachments/assets/4854d6af-b0c4-481c-910c-34fbd984545b)
+<img width="1440" alt="uploadTrademark" src="https://github.com/user-attachments/assets/249ca6eb-d7dc-4d68-9f64-2b568a6c6462">
+<img width="1440" alt="CheckHomeRepair" src="https://github.com/user-attachments/assets/eb19e4d5-c660-4fce-86ec-0ef44c6300d2">
+<img width="1440" alt="checkClassicResult" src="https://github.com/user-attachments/assets/f60828f8-a82f-4bbf-9861-695bfd08949d">
+<img width="454" alt="image" src="https://github.com/user-attachments/assets/7dd44e94-8e59-4319-83c2-208ea0050abf">
+
 ## Technical Stack
 
 ### Frontend
